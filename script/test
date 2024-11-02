@@ -1,0 +1,35 @@
+class EventHandler {
+    constructor(accountService, cartService, productService) {
+        this.accountService = accountService;
+        this.cartService = cartService;
+        this.productService = productService;
+        this.initializeEventListeners();
+    }
+
+    initializeEventListeners() {
+        document.addEventListener('click', (event) => this.handleClick(event));
+        document.addEventListener('change', (event) => this.handleChange(event));
+    }
+
+    handleClick(event) {
+        // ... existing click handlers ...
+    }
+
+    handleChange(event) {
+        if (event.target.classList.contains('cart-item-quantity')) {
+            this.handleUpdateCartQuantity(event);
+        }
+    }
+
+    handleUpdateCartQuantity(event) {
+        const productId = parseInt(event.target.dataset.productId);
+        const newQuantity = parseInt(event.target.value);
+        if (newQuantity > 0) {
+            this.cartService.updateCartItemQuantity(productId, newQuantity);
+        } else {
+            this.cartService.removeFromCart(productId);
+        }
+    }
+
+    // ... other methods ...
+}

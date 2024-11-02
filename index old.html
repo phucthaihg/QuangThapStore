@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Waggy - Free eCommerce Pet Shop HTML Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .secondary-font {
+            font-family: 'Chilanka', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h1 class="display-4">Best destination for your pets</h1>
+                        <p class="lead">Save 10 - 20% off on pet supplies</p>
+                        <a href="#" class="btn btn-primary btn-lg">Shop Now</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="images/banner-img.png" alt="Pet" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Shop by Category</h2>
+                <div id="categoriesCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a href="category.html?category=foodies" class="text-decoration-none">
+                                        <div class="card h-100">
+                                            <div class="card-body text-center">
+                                                <i class="bi bi-egg-fried fs-1"></i>
+                                                <h5 class="card-title mt-3">Foodies</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="category.html?category=toys" class="text-decoration-none">
+                                        <div class="card h-100">
+                                            <div class="card-body text-center">
+                                                <i class="bi bi-gift fs-1"></i>
+                                                <h5 class="card-title mt-3">Toys</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="category.html?category=clothing" class="text-decoration-none">
+                                        <div class="card h-100">
+                                            <div class="card-body text-center">
+                                                <i class="bi bi-bag fs-1"></i>
+                                                <h5 class="card-title mt-3">Clothing</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a href="category.html?category=accessories" class="text-decoration-none">
+                                        <div class="card h-100">
+                                            <div class="card-body text-center">
+                                                <i class="bi bi-house-door fs-1"></i>
+                                                <h5 class="card-title mt-3">Accessories</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="category.html?category=health" class="text-decoration-none">
+                                        <div class="card h-100">
+                                            <div class="card-body text-center">
+                                                <i class="bi bi-heart-pulse fs-1"></i>
+                                                <h5 class="card-title mt-3">Health</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="category.html?category=outdoor" class="text-decoration-none">
+                                        <div class="card h-100">
+                                            <div class="card-body text-center">
+                                                <i class="bi bi-tree fs-1"></i>
+                                                <h5 class="card-title mt-3">Outdoor</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel controls -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Foodies Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">Foodies</h2>
+                <div id="foodiesCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row g-4">
+                                <div class="col-md-3">
+                                    <div class="card h-100">
+                                        <a href="product.html?id=1" class="text-decoration-none">
+                                            <img src="https://via.placeholder.com/300x200.png?text=Dog+Food"
+                                                class="card-img-top" alt="Dog Food">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Premium Dog Food</h5>
+                                                <p class="card-text">$24.99</p>
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div class="text-warning">
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-half"></i>
+                                                        <span class="ms-1 text-muted">(4.5)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="card-footer bg-transparent border-top-0">
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-primary" onclick="addToCart(1)">Add to
+                                                    Cart</button>
+                                                <button class="btn btn-outline-secondary" onclick="addToWishlist(1)"><i
+                                                        class="bi bi-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card h-100">
+                                        <a href="product.html?id=2" class="text-decoration-none">
+                                            <img src="https://via.placeholder.com/300x200.png?text=Cat+Food"
+                                                class="card-img-top" alt="Cat Food">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Gourmet Cat Food</h5>
+                                                <p class="card-text">$19.99</p>
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div class="text-warning">
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star"></i>
+                                                        <span class="ms-1 text-muted">(4.0)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="card-footer bg-transparent border-top-0">
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-primary" onclick="addToCart(2)">Add to
+                                                    Cart</button>
+                                                <button class="btn btn-outline-secondary" onclick="addToWishlist(2)"><i
+                                                        class="bi bi-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card h-100">
+                                        <a href="product.html?id=3" class="text-decoration-none">
+                                            <img src="https://via.placeholder.com/300x200.png?text=Fish+Food"
+                                                class="card-img-top" alt="Fish Food">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Tropical Fish Flakes</h5>
+                                                <p class="card-text">$9.99</p>
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div class="text-warning">
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-half"></i>
+                                                        <i class="bi bi-star"></i>
+                                                        <span class="ms-1 text-muted">(3.5)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="card-footer bg-transparent border-top-0">
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-primary" onclick="addToCart(3)">Add to
+                                                    Cart</button>
+                                                <button class="btn btn-outline-secondary" onclick="addToWishlist(3)"><i
+                                                        class="bi bi-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card h-100">
+                                        <a href="product.html?id=4" class="text-decoration-none">
+                                            <img src="https://via.placeholder.com/300x200.png?text=Bird+Food"
+                                                class="card-img-top" alt="Bird Food">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Exotic Bird Seeds</h5>
+                                                <p class="card-text">$14.99</p>
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div class="text-warning">
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <span class="ms-1 text-muted">(5.0)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="card-footer bg-transparent border-top-0">
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-primary" onclick="addToCart(4)">Add to
+                                                    Cart</button>
+                                                <button class="btn btn-outline-secondary" onclick="addToWishlist(4)"><i
+                                                        class="bi bi-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row g-4">
+                                <div class="col-md-3">
+                                    <div class="card h-100">
+                                        <a href="product.html?id=5" class="text-decoration-none">
+                                            <img src="https://via.placeholder.com/300x200.png?text=Hamster+Food"
+                                                class="card-img-top" alt="Hamster Food">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Hamster Pellets</h5>
+                                                <p class="card-text">$7.99</p>
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div class="text-warning">
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-half"></i>
+                                                        <span class="ms-1 text-muted">(4.5)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="card-footer bg-transparent border-top-0">
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-primary" onclick="addToCart(5)">Add to
+                                                    Cart</button>
+                                                <button class="btn btn-outline-secondary" onclick="addToWishlist(5)"><i
+                                                        class="bi bi-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card h-100">
+                                        <a href="product.html?id=6" class="text-decoration-none">
+                                            <img src="https://via.placeholder.com/300x200.png?text=Rabbit+Food"
+                                                class="card-img-top" alt="Rabbit Food">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Rabbit Hay</h5>
+                                                <p class="card-text">$12.99</p>
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div class="text-warning">
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star"></i>
+                                                        <span class="ms-1 text-muted">(4.0)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="card-footer bg-transparent border-top-0">
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-primary" onclick="addToCart(6)">Add to
+                                                    Cart</button>
+                                                <button class="btn btn-outline-secondary" onclick="addToWishlist(6)"><i
+                                                        class="bi bi-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card h-100">
+                                        <a href="product.html?id=7" class="text-decoration-none">
+                                            <img src="https://via.placeholder.com/300x200.png?text=Turtle+Food"
+                                                class="card-img-top" alt="Turtle Food">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Turtle Pellets</h5>
+                                                <p class="card-text">$8.99</p>
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div class="text-warning">
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star"></i>
+                                                        <i class="bi bi-star"></i>
+                                                        <span class="ms-1 text-muted">(3.0)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="card-footer bg-transparent border-top-0">
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-primary" onclick="addToCart(7)">Add to
+                                                    Cart</button>
+                                                <button class="btn btn-outline-secondary" onclick="addToWishlist(7)"><i
+                                                        class="bi bi-heart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#foodiesCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#foodiesCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="category.html?category=foodies" class="btn btn-outline-primary btn-lg">Shop All Foodies</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clothing Products Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Clothing Products</h2>
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <a href="product.html?id=101" class="text-decoration-none">
+                                <img src="https://via.placeholder.com/300x200.png?text=Dog+Sweater" class="card-img-top"
+                                    alt="Dog Sweater">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cozy Dog Sweater</h5>
+                                    <p class="card-text">$29.99</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <div class="text-warning">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-half"></i>
+                                            <span class="ms-1 text-muted">(4.5)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary" onclick="addToCart(101)">Add to Cart</button>
+                                    <button class="btn btn-outline-secondary" onclick="addToWishlist(101)"><i
+                                            class="bi bi-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <a href="product.html?id=102" class="text-decoration-none">
+                                <img src="https://via.placeholder.com/300x200.png?text=Cat+Costume" class="card-img-top"
+                                    alt="Cat Costume">
+                                <div class="card-body">
+                                    <h5 class="card-title">Funny Cat Costume</h5>
+                                    <p class="card-text">$24.99</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <div class="text-warning">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star"></i>
+                                            <span class="ms-1 text-muted">(4.0)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary" onclick="addToCart(102)">Add to Cart</button>
+                                    <button class="btn btn-outline-secondary" onclick="addToWishlist(102)"><i
+                                            class="bi bi-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <a href="product.html?id=103" class="text-decoration-none">
+                                <img src="https://via.placeholder.com/300x200.png?text=Dog+Raincoat"
+                                    class="card-img-top" alt="Dog Raincoat">
+                                <div class="card-body">
+                                    <h5 class="card-title">Waterproof Dog Raincoat</h5>
+                                    <p class="card-text">$34.99</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <div class="text-warning">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-half"></i>
+                                            <i class="bi bi-star"></i>
+                                            <span class="ms-1 text-muted">(3.5)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary" onclick="addToCart(103)">Add to Cart</button>
+                                    <button class="btn btn-outline-secondary" onclick="addToWishlist(103)"><i
+                                            class="bi bi-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <a href="product.html?id=104" class="text-decoration-none">
+                                <img src="https://via.placeholder.com/300x200.png?text=Pet+Bandana" class="card-img-top"
+                                    alt="Pet Bandana">
+                                <div class="card-body">
+                                    <h5 class="card-title">Stylish Pet Bandana</h5>
+                                    <p class="card-text">$9.99</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <div class="text-warning">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <span class="ms-1 text-muted">(5.0)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-primary" onclick="addToCart(104)">Add to Cart</button>
+                                    <button class="btn btn-outline-secondary" onclick="addToWishlist(104)"><i
+                                            class="bi bi-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="category.html?category=clothing" class="btn btn-outline-primary btn-lg">Shop All
+                        Clothing</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- cartPanel placeholder -->
+    <div id="cartPanel-placeholder"></div>
+
+    <!-- wishlistPanel placeholder -->
+    <div id="wishlistPanel-placeholder"></div>
+
+
+    <!-- ... javascripts ... -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script/layout.js"></script>
+    <script src="script/common.js"></script>
+    <script src="script/cart.js"></script>
+    <script src="script/wishlist.js"></script>
+    <script src="script/product.js"></script>
+
+</body>
+
+</html>

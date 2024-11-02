@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Checkout - Quang Thap</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .secondary-font {
+            font-family: 'Chilanka', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="container py-5">
+        <h1 class="mb-4">Checkout</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h4 mb-3">Order Summary</h2>
+                <div id="order-summary">
+                    <!-- Order summary will be dynamically inserted here -->
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <strong>Total:</strong>
+                    <span id="total-amount"></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <form id="checkout-form">
+                    <h2 class="h4 mb-3">Shipping Information</h2>
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" required>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" required>
+                        </div>
+                        <div class="col">
+                            <label for="zipCode" class="form-label">Zip Code</label>
+                            <input type="text" class="form-control" id="zipCode" required>
+                        </div>
+                    
+                    <h2 class="h4 mb-3 mt-4">Billing Information</h2>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="sameAsShipping">
+                        <label class="form-check-label" for="sameAsShipping">Same as shipping address</label>
+                    </div>
+                    <div id="billing-fields">
+                        <div class="mb-3">
+                            <label for="billingName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="billingName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="billingAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="billingAddress" required>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="billingCity" class="form-label">City</label>
+                                <input type="text" class="form-control" id="billingCity" required>
+                            </div>
+                            <div class="col">
+                                <label for="billingZipCode" class="form-label">Zip Code</label>
+                                <input type="text" class="form-control" id="billingZipCode" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="h4 mb-3 mt-4">Payment Information</h2>
+                    <div class="mb-3">
+                        <label for="cardNumber" class="form-label">Card Number</label>
+                        <input type="text" class="form-control" id="cardNumber" required>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="expiryDate" class="form-label">Expiry Date</label>
+                            <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                        </div>
+                        <div class="col">
+                            <label for="cvv" class="form-label">CVV</label>
+                            <input type="text" class="form-control" id="cvv" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Place Order</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- cartPanel placeholder -->
+    <div id="cartPanel-placeholder"></div>
+
+    <!-- wishlistPanel placeholder -->
+    <div id="wishlistPanel-placeholder"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script/layoutService.js"></script>
+    <script src="script/cartService.js"></script>
+    <script src="script/wishlist.js"></script>
+    <script src="script/productService.js"></script>
+    <script src="script/categoryService.js"></script>
+    <script src="script/accountService.js"></script>
+    <script src="script/EventHandler.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const layoutService = new LayoutService();
+            const accountService = new AccountService();
+            const cartService = new CartService();
+            const productService = new ProductService();
+            const eventHandler = new EventHandler(accountService, cartService, productService);
+
+            // Load cart items and display in order summary
+            const cart = cartService.getCart();
+            const orderSummary = document.getElementById('order-summary');
+            let total = 0;
+
+            cart.forEach(item => {
+                const product = productService.getProductById(item.id);
+                const itemElement = document.createElement('div');
+                itemElement.className = 'd-flex justify-content-between mb-2';
+                itemElement.innerHTML = `
+                    <span>${product.name} x ${item.quantity}</span>
+                    <span>$${(product.price * item.quantity).toFixed(2)}</span>
+                `;
+                orderSummary.appendChild(itemElement);
+                total += product.price * item.quantity;
+            });
+
+            document.getElementById('total-amount').textContent = `$${total.toFixed(2)}`;
+
+            // Handle "Same as shipping" checkbox
+            const sameAsShippingCheckbox = document.getElementById('sameAsShipping');
+            const billingFields = document.getElementById('billing-fields');
+
+            sameAsShippingCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    billingFields.style.display = 'none';
+                    // Copy shipping details to billing fields
+                    document.getElementById('billingName').value = document.getElementById('fullName').value;
+                    document.getElementById('billingAddress').value = document.getElementById('address').value;
+                    document.getElementById('billingCity').value = document.getElementById('city').value;
+                    document.getElementById('billingZipCode').value = document.getElementById('zipCode').value;
+                } else {
+                    billingFields.style.display = 'block';
+                    // Clear billing fields
+                    document.getElementById('billingName').value = '';
+                    document.getElementById('billingAddress').value = '';
+                    document.getElementById('billingCity').value = '';
+                    document.getElementById('billingZipCode').value = '';
+                }
+            });
+
+            // Handle form submission
+            document.getElementById('checkout-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Here you would typically send the form data to your server
+                alert('Order placed successfully!');
+                // Clear the cart after successful order
+                clearCart();
+                // Redirect to a thank you page or back to the home page
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+
+</html>
